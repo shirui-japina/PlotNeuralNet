@@ -87,4 +87,7 @@ venv.bak/
 .vscode/launch.json
 my_project/*
 !my_project/cnn_simple.py
+!my_project/cnn_simple.pdf
 pyexamples/*
+pycore/__init__.pyc
+pycore/tikzeng.pyc
