@@ -86,4 +86,5 @@ venv.bak/
 .vscode/settings.json
 .vscode/launch.json
 my_project/*
+!my_project/cnn_simple.py
 pyexamples/*
