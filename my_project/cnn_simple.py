@@ -8,7 +8,8 @@ arch = [
     to_cor(),
     to_begin(),
 
-    # input
+    # input 
+    to_input("/Users/shirui/Desktop/test/aa.png", to='(-2.5,0,0)', width=9, height=9, name='temp'),
 
     to_Conv("c1", 44, 20, offset="(0,0,0)", height=40, depth=40, width=2, caption="conv1"),
     to_Pool("p1", offset="(0.4,0,0)", to="(0,0,0)", height=35, depth=35, width=2, opacity=0.5, caption=""),
@@ -21,10 +22,10 @@ arch = [
     to_connection("p2", "c3"),
     to_Pool("p3", offset="(7,0,0)", to="(0,0,0)", height=15, depth=15, width=6, opacity=0.5, caption=""),
 
-    to_UnPool("ReLU", offset="(9.7,0,0)", to="(0,0,0)", height=15, depth=15, width=6, opacity=0.5, caption="ReLU"),
-    to_connection("p3", "ReLU"),
+    to_UnPool("Dropout", offset="(9.7,0,0)", to="(0,0,0)", height=15, depth=15, width=6, opacity=0.5, caption="Dropout"),
+    to_connection("p3", "Dropout"),
     to_Conv("c4", 1, 2, offset="(12.4,0,0)", height=8, depth=8, width=3, caption="conv4"),
-    to_connection("ReLU", "c4"),
+    to_connection("Dropout", "c4"),
 
     to_SoftMax("SoftMax", s_filer=2, offset="(14,0,0)", to="(0,0,0)", width=3, height=3, depth=6, opacity=0.7, caption="SoftMax"),
     to_connection("c4", "SoftMax"),
